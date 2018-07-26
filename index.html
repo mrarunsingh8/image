@@ -39,13 +39,13 @@
 		    </div>
 		    <div class="row fw thumb">
 		    	<div class="column">
-			    	<a href="javascript:void(0)"><img src="img/1.jpg"></a>
+			    	<a href="javascript:void(0)"><img src="img/thumb/1.jpg" data-original="img/1.jpg"></a>
 			    </div>
 			    <div class="column">
-				    <a href="javascript:void(0)"><img src="img/2.jpg"></a>
+				    <a href="javascript:void(0)"><img src="img/thumb/2.jpg" data-original="img/2.jpg"></a>
 				</div>
 				<div class="column">
-				    <a href="javascript:void(0)"><img src="img/3.jpg"></a>
+				    <a href="javascript:void(0)"><img src="img/thumb/3.jpg" data-original="img/3.jpg"></a>
 				</div>
 		    </div>
 		  </div>
@@ -56,13 +56,13 @@
 		    </div>
 		    <div class="row fw thumb">
 		    	<div class="column">
-			    	<a href="javascript:void(0)"><img src="img/4.jpg"></a>
+			    	<a href="javascript:void(0)"><img src="img/thumb/4.jpg" data-original="img/4.jpg"></a>
 			    </div>
 			    <div class="column">
-				    <a href="javascript:void(0)"><img src="img/5.jpg"></a>
+				    <a href="javascript:void(0)"><img src="img/thumb/5.jpg" data-original="img/5.jpg"></a>
 				</div>
 				<div class="column">
-				    <a href="javascript:void(0)"><img src="img/6.jpg"></a>
+				    <a href="javascript:void(0)"><img src="img/thumb/6.jpg" data-original="img/6.jpg"></a>
 				</div>
 		    </div>
 		  </div>
@@ -73,13 +73,13 @@
 		    </div>
 		    <div class="row fw thumb">
 		    	<div class="column">
-			    	<a href="javascript:void(0)"><img src="img/1.jpg"></a>
+			    	<a href="javascript:void(0)"><img src="img/thumb/1.jpg" data-original="img/1.jpg"></a>
 			    </div>
 			    <div class="column">
-				    <a href="javascript:void(0)"><img src="img/2.jpg"></a>
+				    <a href="javascript:void(0)"><img src="img/thumb/2.jpg" data-original="img/2.jpg"></a>
 				</div>
 				<div class="column">
-				    <a href="javascript:void(0)"><img src="img/3.jpg"></a>
+				    <a href="javascript:void(0)"><img src="img/thumb/3.jpg" data-original="img/3.jpg"></a>
 				</div>
 		    </div>
 		  </div>
@@ -98,9 +98,8 @@
 				});
 
 				$(".row.thumb .column a").click(function(){
-					var src = $(this).find("img").prop("src");
+					var src = $(this).find("img").attr("data-original");
 					$(this).closest(".column.item").find(".row.main img").prop("src", src);
-					console.log(src);
 				});
 			});
 
