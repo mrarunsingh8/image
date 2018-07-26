@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+		<style>
+			.row {
+			  display: flex;
+			  flex-wrap: wrap;
+			  padding: 0 4px;
+			  height: 450px;
+			}
+			.row .column {
+			  flex: 25%;
+			  max-width: 24%;
+			  padding: 0 4px;
+			  margin: 10px;
+			}
+			.column img {
+			  margin-top: 8px;
+			  vertical-align: middle;
+			}
+			.row.fw{
+				width: 100%;
+			}
+			.row.fw.thumb .column{
+				width: 30%;
+				height: auto;
+				display: none;
+			}
+			.row.fw.thumb .column img{
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>			
+		<div class="row container"> 
+		  <div class="column item">
+		    <div class="row fw main">
+		    	<img src="img/1.jpg">
+		    </div>
+		    <div class="row fw thumb">
+		    	<div class="column">
+			    	<a href="javascript:void(0)"><img src="img/1.jpg"></a>
+			    </div>
+			    <div class="column">
+				    <a href="javascript:void(0)"><img src="img/2.jpg"></a>
+				</div>
+				<div class="column">
+				    <a href="javascript:void(0)"><img src="img/3.jpg"></a>
+				</div>
+		    </div>
+		  </div>
+
+		  <div class="column item">
+		    <div class="row fw main">
+		    	<img src="img/4.jpg">
+		    </div>
+		    <div class="row fw thumb">
+		    	<div class="column">
+			    	<a href="javascript:void(0)"><img src="img/4.jpg"></a>
+			    </div>
+			    <div class="column">
+				    <a href="javascript:void(0)"><img src="img/5.jpg"></a>
+				</div>
+				<div class="column">
+				    <a href="javascript:void(0)"><img src="img/6.jpg"></a>
+				</div>
+		    </div>
+		  </div>
+
+		  <div class="column item">
+		    <div class="row fw main">
+		    	<img src="img/1.jpg">
+		    </div>
+		    <div class="row fw thumb">
+		    	<div class="column">
+			    	<a href="javascript:void(0)"><img src="img/1.jpg"></a>
+			    </div>
+			    <div class="column">
+				    <a href="javascript:void(0)"><img src="img/2.jpg"></a>
+				</div>
+				<div class="column">
+				    <a href="javascript:void(0)"><img src="img/3.jpg"></a>
+				</div>
+		    </div>
+		  </div>
+		</div>
+
+
+
+		<script>
+			
+			$(function(){
+				$(".row.container .column").mouseover(function(){
+					$(this).find(".row.thumb .column").show();
+				});
+				$(".row.container .column").mouseout(function(){
+					$(this).find(".row.thumb .column").hide();
+				});
+
+				$(".row.thumb .column a").click(function(){
+					var src = $(this).find("img").prop("src");
+					$(this).closest(".column.item").find(".row.main img").prop("src", src);
+					console.log(src);
+				});
+			});
+
+		</script>
+
+
+	</body>
+
+</html>
