@@ -2,11 +2,13 @@
 	<head>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 		<style>
+			.row.container {
+			  height: auto;
+			}
 			.row {
 			  display: flex;
 			  flex-wrap: wrap;
 			  padding: 0 4px;
-			  height: 450px;
 			}
 			.row .column {
 			  flex: 25%;
@@ -31,7 +33,8 @@
 			}
 		</style>
 	</head>
-	<body>			
+	<body>
+		<button id="add-row">Add New</button>		
 		<div class="row container"> 
 		  <div class="column item">
 		    <div class="row fw main">
@@ -90,16 +93,20 @@
 		<script>
 			
 			$(function(){
-				$(".row.container .column").mouseover(function(){
+				$(document).on("mouseover", ".row.container .column", function(){
 					$(this).find(".row.thumb .column").show();
 				});
-				$(".row.container .column").mouseout(function(){
+				$(document).on("mouseout",".row.container .column", function(){
 					$(this).find(".row.thumb .column").hide();
 				});
 
-				$(".row.thumb .column a").click(function(){
+				$(document).on("click", ".row.thumb .column a", function(){
 					var src = $(this).find("img").attr("data-original");
 					$(this).closest(".column.item").find(".row.main img").prop("src", src);
+				});
+
+				$("#add-row").click(function(){
+					$("body").append($(".row.container:first", document).prop("outerHTML"));
 				});
 			});
 
